@@ -2,15 +2,6 @@
 
 Generate revshells in your terminal
 
-## Table of Contents
-
-- [Installation](#installation)
-- [Usage](#usage)
-  - [Paramaters](#parameters)
-- [Contributing](#contributing)
-- [Credits](#credits)
-- [License](#license)
-
 ## Installation
 
 ```bash
