@@ -92,22 +92,18 @@ func getIPWithMetadata() []IPSource {
 			if ipnet, ok := addr.(*net.IPNet); ok && !ipnet.IP.IsLoopback() {
 				if ipnet.IP.To4() != nil {
 					source := iface.Name
-					if iface.Name == "tun0" {
-						source = "VPN tunnel (tun0)"
-						ipSources = append(ipSources, IPSource{
-							Address: ipnet.IP.String(),
-							Source:  source,
-							Primary: len(ips) == 0,
-						})
-						ips = append(ips, ipnet.IP.String())
-					} else {
-						ipSources = append(ipSources, IPSource{
-							Address: ipnet.IP.String(),
-							Source:  source,
-							Primary: len(ips) == 0,
-						})
-						ips = append(ips, ipnet.IP.String())
+					ipSource := IPSource{
+						Address: ipnet.IP.String(),
+						Source:  source,
+						Primary: len(ips) == 0,
 					}
+					if iface.Name == "tun0" {
+						ipSource.Source = "VPN tunnel (tun0)"
+						ipSources = append([]IPSource{ipSource}, ipSources...)
+					} else {
+						ipSources = append(ipSources, ipSource)
+					}
+					ips = append(ips, ipnet.IP.String())
 				}
 			}
 		}
