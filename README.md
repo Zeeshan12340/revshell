@@ -7,6 +7,7 @@ Generate revshells in your terminal
 ```bash
 go install -v github.com/gubarz/revshell@latest
 ```
+
 ## Usage
 
 ### Interactive Mode
@@ -16,6 +17,7 @@ The easiest way to generate a reverse shell is using the interactive mode:
 ```bash
 revshell generate
 ```
+
 This will guide you through selecting a shell type, method, IP address, port, and other options.
 
 ### Direct Shell Commands
@@ -74,6 +76,7 @@ revshell config
 # Edit the config file
 vim ~/.config/revshell/config
 ```
+
 Configuration options:
 
 - ip: Default IP address
@@ -83,21 +86,8 @@ Configuration options:
 
 ## Contributing
 
-Contributions are welcome! Please follow these steps:
-
-Fork the project
-
-Create your feature branch (git checkout -b feature/YourFeature)
-
-Commit your changes (git commit -am 'Add some feature')
-
-Push to the branch (git push origin feature/YourFeature)
-
-Create a new Pull Request
+Contributions are welcome! Please make a pull request.
 
 ## Credits
 
 https://www.revshells.com / https://github.com/0dayCTF/reverse-shell-generator
-
-## License
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
